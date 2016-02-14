@@ -19,6 +19,11 @@
         $('#type').text('divided by');
 
     }
+    function clearButton(){
+        $('#calculator-form').find('input[type=text]').val('');
+        $('#answer-text').text('');
+
+    }
     function submitButton(){
         event.preventDefault();
         $.each($('#calculator-form').serializeArray(), function(i, field) {
@@ -35,7 +40,6 @@
         });
         console.log(values);
         $('#answer-text').text('');
-        $('#calculator-form').find('input[type=text]').val('');
     }
 
     $(document).ready(function() {
@@ -44,7 +48,7 @@
         $('#multiply').on('click', multiplyButton);
         $('#divide').on('click', divideButton);
         $('#submit').on('click', submitButton);
-
+        $('#clear').on('click', clearButton);
 
 
     });
