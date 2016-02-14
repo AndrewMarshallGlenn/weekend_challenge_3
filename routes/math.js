@@ -5,16 +5,16 @@ var result = '';
 
 function calculate(input1, input2, type){
     switch(type) {
-        case 'addition':
+        case '+':
             result = addition(input1, input2);
             return result;
-        case 'subtraction':
+        case '-':
             result = subtraction(input1, input2);
             return result;
-        case 'multiplication':
+        case '*':
             result = multiplication(input1, input2);
             return result;
-        case 'division':
+        case '/':
             result = division(input1, input2);
             return result;
     }
