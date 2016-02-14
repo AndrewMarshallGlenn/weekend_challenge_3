@@ -2,18 +2,13 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var path = require('path');
-var add = require('./routes/add');
-var subtract = require('./routes/subtract');
-var multiply = require('./routes/multiply');
-var divide = require('./routes/divide');
+var math = require('./routes/math');
+
 
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('port', process.env.PORT || 5000);
-app.use('/add', add)
-app.use('/subtract', subtract)
-app.use('/multiply', multiply)
-app.use('/divide', divide)
+app.use('/math', math)
 app.get('/*', function(req, res) {
     console.log("Here is the request: " , req.params);
     var file = req.params[0] || '/views/index.html';
