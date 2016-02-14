@@ -1,5 +1,21 @@
     var values = {};
 
+    function chooseMethod(objectType){
+        switch(values.type) {
+            case '+':
+                result = '/addition';
+                return result;
+            case '-':
+                result = '/subtraction';
+                return result;
+            case '*':
+                result = '/multiplication';
+                return result;
+            case '/':
+                result = '/division';
+                return result;
+        }
+    }
     function addButton(){
         values.type = 'addition';
         $('#type').text('plus');
@@ -88,10 +104,10 @@
         $('#display1').text('');
         $('#display2').text('');
         $('#display3').text('');
-
+        var question = chooseMethod(values);
         $.ajax({
             type: 'POST',
-            url: '/math',
+            url: question,
             data: values,
             success: function(data) {
                 console.log(data);
