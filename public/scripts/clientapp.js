@@ -37,10 +37,10 @@
         $('#display2').text('/');
     }
     function clearButton(){
-        $('#calculator-form').find('input[type=text]').val('');
         $('#display1').text('');
         $('#display2').text('');
         $('#display3').text('');
+        $('#answer-text').text('');
     }
     function zeroButton(){
         if(($('#display2').text()) == ''){
@@ -115,7 +115,6 @@
             }
         });
         console.log(values);
-        $('#answer-text').text('');
     }
 
     $(document).ready(function() {
